@@ -1,0 +1,22 @@
+.btn-with-gradient {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgb(5, 130, 172), rgb(16, 85, 97));
+  border-radius: 3px;
+  font-size: 14px;
+  height: 36px;
+  padding: 0 16px;
+  color: #ffffff !important;
+  border: none;
+  width: fit-content;
+  min-width: 80px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-with-gradient:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
