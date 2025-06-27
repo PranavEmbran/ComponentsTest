@@ -1,0 +1,30 @@
+.my-new-class {
+    background: red;
+  }
+  
+  body{
+    background-color: #d9e0e7;
+  }
+
+  .main-container {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-height: fit-content;
+    /* min-height: auto; */
+    padding: 32px 10px;
+    border-top: 5px solid #0097a7;
+    height: calc(100vh - 64px);
+    /* or whatever header/footer size you subtract */
+    margin-left: var(--sidebar-width);
+    transition: margin-left 0.3s;
+  }
+  
+  .main-container.collapsed {
+    margin-left: var(--sidebar-collapsed-width);
+    transition: margin-left 0.3s;
+  }
+
+  

@@ -1,23 +1,29 @@
-import { useState } from 'react'
-import SectionHeading from './Components/SectionHeading'
-import ButtonWithGradient from './Components/ButtonWithGradient'
-import './App.css'
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+import SectionHeading from './Components/SectionHeading';
+import ButtonWithGradient from './Components/ButtonWithGradient';
+import PageContainer from './Components/PageContainer';
+import NewPge from './Components/NewPage';
+
+import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0);
-    const buttonText = count > 0 ? "Submitted" : "Submit";
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+
+  const toggleSidebar = () => setSidebarCollapsed(prev => !prev);
 
   return (
-    <>
-      <SectionHeading title="Dashboard" subtitle="Overview and quick stats for dialysis management" />
+    <Router>
 
-      {/* Using text prop  */}
-      {/* <ButtonWithGradient text={buttonText} /> */}
-      {/* <ButtonWithGradient text="Submit" /> */}
-      <ButtonWithGradient text={count > 0 ? "Submitted" : "Submit"} />
+      <PageContainer sidebarCollapsed={sidebarCollapsed}>
+        <Routes>
+          <Route path="/" element={<NewPge />} />
+        </Routes>
 
-    </>
-  )
+      </PageContainer>
+    </Router>
+  );
 }
 
-export default App
+export default App;
